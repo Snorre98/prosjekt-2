@@ -1,3 +1,11 @@
+# Project context (added september 2024)
+
+This project was completed by Sander Garland Slinning, Benjamin Christoffer Finsen Fogale and Snorre Sæther. It was completed as part of the course IT2810 - Web Development at NTNU, in the Autumn of 2023. The course consists of two parts, project 1 and project 2. Project 1 is purly a frontend project, while project 2 is a fullstack GraphQL project.
+
+This project uses Neo4j for creating and querying a GraphQL database. We had to create a dataset to populate the DB with. In `/backend/dataset-utils` there are Python scripts we used to fetch data and process this data to be used in a GraphDB.
+
+If there are references to the project being available from some server, it probably is not available anymore. I belive all servers are wiped after the course has completed every year.
+
 # Sounds Good v1.1
 
 ## Description
@@ -6,7 +14,6 @@ Sounds Good is a web application that allows you to search for different artists
 
 ## Installation
 
-The project is fully functional [here](http://it2810-23.idi.ntnu.no/project2).
 
 ### Start local backend
 
@@ -76,6 +83,8 @@ node index
   Description: Improve the app and add other important things such as web accessibility and make the code more sustainable.
 
 ## Dataset
+We did not find a dataset which completed our need, so we generated one that does.
+To summarize we made queries to the last.fm open API to compile a dataset which we felt had enough relevant data for the purpos of this course. The database contains 9018 nodes where each node is either an music artist, album, song or tag (realated to album). There are 150 artist, 100 internal artists most popular on last.fm and 50 varius scandinavian artists. These artists have a realtion to the top 5 album nodes (according to last.fm) and all song nodes on these albums. The albums also has realtion to songs on them as well as usergenerated tags (on last.fm). We also added support for commenting on albums. The comments are represented as nodes with relations to the song in the database and are saved permanently.
 
 View our dedicated dataset documentation [here](/frontend-Backend/dataset-utils/README.md).
 
